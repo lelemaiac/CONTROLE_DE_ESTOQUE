@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+    {% for item in movimentacao_banco%}
+        <div class="movimentacao">
+            Quantidade:{{item.quantidade}}
+            Data:{{item.data}}
+            Status:{{item.status}}
+            Id do produto: {{item.produto_id}}
+            Id do funcionário: {{item.funcionario_id}}
+        </div>
+
+    {% endfor %}
+
+{% endblock conteudo %}

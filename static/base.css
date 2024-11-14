@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+body, html {
+    height: 100vh;
+    font-family: "Berlin Sans";
+    font-size: 20px;
+    background-color: #392c7a;
+
+
+}
+
+.container {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+div p{
+    display: inline;
+}
+
+li, a{
+    color: #0c0c0c;
+    text-decoration: none;
+
+}
+
+a:hover{
+    color: #0e0e6b;
+}
+
+
+.header {
+    text-align: center;
+    font-size: 30px;
+    display: block;
+    background-color: #08083d;
+    height: 100px;
+    color: white;
+}
+
+.nav {
+    display: inline-block;
+    height: calc(100% - 110px);
+    background-color: #282C40;
+    width: 15%;
+    float: left;
+    text-align: center;
+    color: white;
+
+}
+
+main{
+     background-color: #392c7a;
+    display: inline-block;
+    /*largura da tela*/
+    width: 89%;
+    /* altura*/
+    height: 100%;
+    vertical-align: top;
+    color: white;
+}
+

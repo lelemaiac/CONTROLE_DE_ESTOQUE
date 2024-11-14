@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+    {% for item in funcionarios_banco%}
+        <div class="funcionario">
+            Nome:{{item.nome}}
+            Telefone:{{item.telefone}}
+            Ano de nascimento:{{item.ano_de_nascimento}}
+            Endereço:{{item.endereco}}
+            CPF:{{item.cpf}}
+            Email:{{item.email}}
+        </div>
+
+    {% endfor %}
+
+{% endblock conteudo %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<!--Chama a função-->
+
+<form class="form_control" action="{{ url_for('editar_produto', id=var_produto.id) }}" method="POST">
+    <div class="prod">
+        <label>Nome: </label>
+        <input type="text" name="form_nome" value="{{var_produto.nome}}">
+    </div>
+    <div class="prod">
+        <label>Marca: </label>
+        <input type="text" name="form_marca" value="{{var_produto.marca}}">
+    </div>
+
+    <div class="prod">
+        <label>Descrição: </label>
+        <input type="text" name="form_descricao" value="{{var_produto.descricao}}">
+    </div>
+
+    <div class="prod">
+        <label>Valor: </label>
+        <input type="number" name="form_valor" value="{{var_produto.valor}}">
+    </div>
+
+    <div class="prod">
+        <label>Código: </label>
+        <input type="number" name="form_codigo" value="{{var_produto.codigo}}">
+    </div>
+
+    <div class="prod">
+        <label>Categoria: </label>
+        <select class="form_control" name="form_categoria_id" value="{{var_produto.categoria_id}}">
+            <option value="{{nome}}" disabled selected hidden>Selecione uma opção</option>
+            {% for item in var_categoria %}
+                <option value="{{item.id}}">{{item.nome}}</option>
+            {% endfor %}
+
+        </select>
+    </div>
+
+
+    {% if var_produto %}
+        <form action="{{ url_for('editar_produto', id=var_produto.id) }}" method="POST">
+            <!-- campos do formulário -->
+        </form>
+    {% else %}
+        <p>Produto não encontrado.</p>
+    {% endi'f %}
+
+    <button>Salvar</button>
+    <button><a href="{{url_for('produtos')}}"></a>Cancelar</button>
+
+</form>
+{% endblock conteudo %}

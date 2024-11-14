@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<!--Chama a função-->
+
+<form action="{{url_for('criar_funcionario')}}" method="POST">
+    <div class="fun">
+        <label>Nome: </label>
+        <input type="text" name="form_nome">
+    </div>
+    <div class="fun">
+        <label>Telefone: </label>
+        <input type="text" name="form_telefone">
+    </div>
+
+    <div class="fun">
+        <label>Ano de nascimento: </label>
+        <input type="number" name="form_anoNasci">
+    </div>
+
+    <div class="fun">
+        <label>Endereço: </label>
+        <input type="text" name="form_endereco">
+    </div>
+
+    <div class="fun">
+        <label>CPF: </label>
+        <input type="text" name="form_cpf">
+    </div>
+
+    <div class="fun">
+        <label>Email: </label>
+        <input type="text" name="form_email">
+    </div>
+
+    <button>Salvar</button>
+    <button><a href="{{url_for('funcionarios')}}"></a>Cancelar</button>
+
+</form>
+
+{% endblock conteudo %}

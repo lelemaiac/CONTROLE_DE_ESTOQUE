@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<!--Chama a função-->
+
+<form action="{{url_for('criar_categoria')}}" method="POST">
+    <div class="cat">
+        <label>Nome: </label>
+        <input type="text" name="form_nome">
+    </div>
+
+    <button>Salvar</button>
+    <button><a href="{{url_for('categorias')}}"></a>Cancelar</button>
+
+</form>
+
+{% endblock conteudo %}

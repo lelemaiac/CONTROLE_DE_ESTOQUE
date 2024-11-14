@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+    {% for item in produtos_banco%}
+        <div class="produtos">
+            Nome:{{item.nome}}
+            Marca:{{item.marca}}
+            Descrição:{{item.descricao}}
+            Valor:{{item.valor}}
+            Código:{{item.codigo}}
+            Id da categoria:{{item.categoria_id}}
+        </div>
+
+        <li><a href="{{ url_for('editar_produto',id=item.id) }}">Editar Produto</a></li>
+
+    {% endfor %}
+
+
+{% endblock conteudo %}
+

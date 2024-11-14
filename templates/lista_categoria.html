@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+    {% for item in categorias_banco%}
+        <div class="categoria">
+            Nome:{{item.nome}}
+        </div>
+
+    {% endfor %}
+
+{% endblock conteudo %}

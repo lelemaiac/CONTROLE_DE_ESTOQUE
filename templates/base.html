@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/base.css">
+</head>
+<body>
+<div class="container">
+     <div class="header">
+        <h1>Stock Administration Solution </h1>
+    </div>
+
+</div>
+<nav>
+    <ul>
+        <li><a href="{{url_for('inicio')}}"> Início</a></li>
+        <li><a href="{{url_for('criar_produto')}}">Cadastro de Produto</a></li>
+        <li><a href="{{url_for('criar_funcionario')}}">Cadastro de Funcionário</a></li>
+        <li><a href="{{url_for('criar_movimentacao')}}"> Cadastro de Movimentação</a></li>
+        <li><a href="{{url_for('criar_categoria')}}"> Cadastro de Categorias</a></li>
+        <li><a href="{{url_for('produtos')}}"> Lista de Produtos</a></li>
+        <li><a href="{{url_for('funcionarios')}}"> Lista de Funcionários</a></li>
+        <li><a href="{{url_for('movimentacoes')}}"> Lista de Movimentações</a></li>
+        <li><a href="{{url_for('categorias')}}"> Lista de Categorias</a></li>
+
+    </ul>
+</nav>
+
+<main>
+    {% block conteudo %}
+    {% endblock %}
+</main>
+
+</body>
+</html>
