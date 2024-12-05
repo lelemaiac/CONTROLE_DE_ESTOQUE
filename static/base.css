@@ -3,34 +3,40 @@
     padding: 0;
 }
 
-
-
-
-
 body, html {
     height: 100vh;
-    font-family: "Berlin Sans";
+    font-family: "Berlin Sans FB";
     font-size: 20px;
-    background-color: #392c7a;
-
-
-}
-
-.container {
-    display: block;
-    width: 100vw;
-    height: 100vh;
-
-}
-
-div p{
-    display: inline;
+    background-color: #282c40;
 }
 
 li, a{
-    color: #0c0c0c;
+    color: white;
     text-decoration: none;
+}
 
+a:hover{
+    color: white;
+}
+
+div p {
+    /*todos os parafrafos dentro de uma div*/;
+    display:inline-block;
+    float: left;
+}
+
+div li {
+    display: block;
+}
+
+
+div{
+  color: white;
+}
+
+li, a{
+    color: white;
+    text-decoration: none;
 }
 
 a:hover{
@@ -38,34 +44,226 @@ a:hover{
 }
 
 
+.container {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
 .header {
     text-align: center;
     font-size: 30px;
     display: block;
-    background-color: #08083d;
+    background-color: #3c4973;
     height: 100px;
     color: white;
+
 }
 
-.nav {
+nav {
     display: inline-block;
-    height: calc(100% - 110px);
-    background-color: #282C40;
-    width: 15%;
+    height: 200%;
+    width: 11%;
+    background-color: #323071;
     float: left;
     text-align: center;
     color: white;
 
 }
 
-main{
-     background-color: #392c7a;
+main {
     display: inline-block;
-    /*largura da tela*/
+    background-color: #282c40;
+     /*largura da tela*/
     width: 89%;
     /* altura*/
     height: 100%;
     vertical-align: top;
+    float: left;
+}
+
+.botao {
+    font-size: 10px;
+    background-color: #a8aaee;
+    /*inline-block da pra mudar o tamanho*/
+    height: 60px;
+    width: 120px;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    /*para organizar deixar alinhado*/
+    float: left;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+.botao:hover{
+    background-color: #8689ef;
+    border: 2px solid black;
+    align-content: center;
+    align-items: center;
+}
+
+.botoes{
+    margin-left: 300px;
+}
+
+/* Formulário */
+form {
+    background-color: #181433;
+    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    width: 50%;
+    margin: 0 auto;
+
+}
+
+form input, form select, form textarea {
+    background-color: #7168C5;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    color: #f6f3f3;
+    width: 650px;
+
+}
+
+form label {
+    font-size: 0.9rem;
+    color: #C1BEEF;
+    display: block;
+}
+
+form button {
+    background-color: #9B92E4;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: #faf9f9;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background-color: #B3A8F5;
+}
+
+/* Botões */
+.buttons {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+/* Ícones (simulação) */
+form input::placeholder {
+    font-size: 0.9rem;
     color: white;
 }
 
+.inicio_text{
+    background-image: url("/static/inicio.png");
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    align-content: center;
+}
+
+.texto{
+    margin: 0 auto;
+    background-color: #3c4973;
+    border-radius: 20px;
+    display: inline-block;
+    height: 60%;
+    width: 65%;
+    margin: 20px;
+}
+
+.texto_titulo{
+    text-align: center;
+}
+
+table, td, th{
+    border: 3px solid black;
+    border-collapse: collapse;
+
+}
+
+td{
+  text-align: center;
+/*  margem interna  */
+    padding: 5px;
+    background-color: #a8aaee;
+    color: white;
+/*    foto*/
+}
+
+th{
+    background-color: #8689ef;
+    color: white;
+}
+
+td:hover {
+    background-color: #8689ef;
+}
+
+.imagem_caixa{
+    float: right;
+    margin-left: 200px;
+    height: 250px;
+    width: 300px;
+    align-items: baseline;
+}
+
+.alinhamento{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    align-content: center;
+    background-image: url("/static/image_cadastro.png");
+}
+
+.botao_ini{
+    display: inline-block;
+    width: 16%;
+    background-color: #8689ef;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    float: left;
+    margin-top: 250px;
+    margin-left: 20px;
+
+}
+
+.botao_ini:hover{
+    background-color: #3B3A75;
+}
+
+.editar{
+    background-color: #4b4bd3;
+}
+
+.funcionario_tab{
+     margin-left: 50px;
+}
+
+.movimentacao_tab{
+     margin-left: 250px;
+}
+
+.produtos_tab{
+     margin-left: 250px;
+}
+
+.categoria_tab{
+     margin-left: 500px;
+}

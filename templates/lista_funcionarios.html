@@ -2,16 +2,37 @@
 
 {% block conteudo %}
 
-    {% for item in funcionarios_banco%}
-        <div class="funcionario">
-            Nome:{{item.nome}}
-            Telefone:{{item.telefone}}
-            Ano de nascimento:{{item.ano_de_nascimento}}
-            Endereço:{{item.endereco}}
-            CPF:{{item.cpf}}
-            Email:{{item.email}}
-        </div>
 
-    {% endfor %}
+
+
+<table class="funcionario_tab">
+
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Ano de Nascimento</th>
+            <th>Endereço</th>
+            <th>CPF</th>
+            <th>Email</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for item in funcionarios_banco%}
+        <tr>
+            <td>{{item.nome}}</td>
+            <td>{{item.telefone}}</td>
+            <td>{{item.ano_de_nascimento}}</td>
+            <td>{{item.endereco}}</td>
+            <td>{{item.cpf}}</td>
+            <td>{{item.email}}</td>
+            <td class="editar"><a href="{{ url_for('editar_funcionario',id=item.id) }}">Editar Funcionário</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
 
 {% endblock conteudo %}

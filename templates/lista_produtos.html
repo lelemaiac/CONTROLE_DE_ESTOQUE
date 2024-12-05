@@ -2,20 +2,37 @@
 
 {% block conteudo %}
 
-    {% for item in produtos_banco%}
-        <div class="produtos">
-            Nome:{{item.nome}}
-            Marca:{{item.marca}}
-            Descrição:{{item.descricao}}
-            Valor:{{item.valor}}
-            Código:{{item.codigo}}
-            Id da categoria:{{item.categoria_id}}
-        </div>
 
-        <li><a href="{{ url_for('editar_produto',id=item.id) }}">Editar Produto</a></li>
 
-    {% endfor %}
+<table class="produtos_tab">
 
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Marca</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Código</th>
+            <th>Id da Categoria</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for item in produtos_banco%}
+        <tr>
+            <td>{{item.nome}}</td>
+            <td>{{item.marca}}</td>
+            <td>{{item.descricao}}</td>
+            <td>{{item.valor}}</td>
+            <td>{{item.codigo}}</td>
+            <td>{{item.categoria_id}}</td>
+            <td class="editar"><a href="{{ url_for('editar_produto', id=item.id) }}">Editar Produtos</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
 
 {% endblock conteudo %}
 

@@ -3,47 +3,52 @@
 {% block conteudo %}
 
 <!--Chama a função-->
+<div class="alinhamento">
+    <form class="form_control" action="{{url_for('criar_movimentacao')}}" method="POST">
+        <div class="movi">
+            <label>Quantidade: </label>
+            <input type="number" name="form_quantidade">
+        </div>
+        <div class="movi">
+            <label>Data: </label>
+            <input type="text" name="form_data">
+        </div>
 
-<form class="form_control" action="{{url_for('criar_movimentacao')}}" method="POST">
-    <div class="movi">
-        <label>Quantidade: </label>
-        <input type="number" name="form_quantidade">
-    </div>
-    <div class="movi">
-        <label>Data: </label>
-        <input type="text" name="form_data">
-    </div>
+        <div class="movi">
+            <label>Status: </label>
+            <select name="form_status" id="">
+                <option value="Saida">Saida</option>
+                <option value="Entrada">Entrada</option>
+            </select>
 
-    <div class="movi">
-        <label>Status: </label>
-        <input type="text" name="form_status">
-    </div>
+        </div>
 
-    <div class="movi">
-        <label>Produto: </label>
-        <select class="form_control" name="form_produto_id">
-            <option value="{{nome}}" disabled selected hidden>Selecione uma opção</option>
-            {% for item in var_produto %}
+        <div class="movi">
+            <label>Produto: </label>
+            <select class="form_control" name="form_produto_id">
+                <option value="{{nome}}" disabled selected hidden>Selecione uma opção</option>
+                {% for item in var_produto %}
                 <option value="{{item.id}}">{{item.nome}}</option>
-            {% endfor %}
+                {% endfor %}
 
-        </select>
-    </div>
+            </select>
+        </div>
 
-    <div class="movi">
-        <label>Funcionário: </label>
-        <select class="form_control" name="form_funcionario_id">
-            <option value="{{nome}}" disabled selected hidden>Selecione uma opção</option>
-            {% for item in var_funcionario %}
+        <div class="movi">
+            <label>Funcionário: </label>
+            <select class="form_control" name="form_funcionario_id">
+                <option value="{{nome}}" disabled selected hidden>Selecione uma opção</option>
+                {% for item in var_funcionario %}
                 <option value="{{item.id}}">{{item.nome}}</option>
-            {% endfor %}
+                {% endfor %}
 
-        </select>
-    </div>
+            </select>
+        </div>
 
-    <button>Salvar</button>
-    <button><a href="{{url_for('movimentacoes')}}"></a>Cancelar</button>
+        <button>Salvar</button>
+        <button><a href="{{url_for('movimentacoes')}}"></a>Cancelar</button>
 
-</form>
+    </form>
+</div>
 
 {% endblock conteudo %}

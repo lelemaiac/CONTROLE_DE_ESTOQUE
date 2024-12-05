@@ -9,30 +9,35 @@
 </head>
 <body>
 <div class="container">
-     <div class="header">
-        <h1>Stock Administration Solution </h1>
-    </div>
+<div class="header">
+    <h1>Stock Administration Solution </h1>
 
 </div>
 <nav>
     <ul>
-        <li><a href="{{url_for('inicio')}}"> Início</a></li>
-        <li><a href="{{url_for('criar_produto')}}">Cadastro de Produto</a></li>
-        <li><a href="{{url_for('criar_funcionario')}}">Cadastro de Funcionário</a></li>
-        <li><a href="{{url_for('criar_movimentacao')}}"> Cadastro de Movimentação</a></li>
-        <li><a href="{{url_for('criar_categoria')}}"> Cadastro de Categorias</a></li>
-        <li><a href="{{url_for('produtos')}}"> Lista de Produtos</a></li>
-        <li><a href="{{url_for('funcionarios')}}"> Lista de Funcionários</a></li>
-        <li><a href="{{url_for('movimentacoes')}}"> Lista de Movimentações</a></li>
-        <li><a href="{{url_for('categorias')}}"> Lista de Categorias</a></li>
+         <a href="{{ url_for('inicio') }}"> <div class="botao">
+             Inicio</div> </a>
+
+        <a href="{{ url_for('cadastros') }}"> <div class="botao">
+             Cadastros</div> </a>
+
+        <a href="{{ url_for('tabelas') }}"> <div class="botao">
+             Tabelas</div> </a>
+
+        <a href="{{ url_for('graficos') }}"> <div class="botao">
+             Gráficos</div> </a>
 
     </ul>
 </nav>
-
 <main>
+    {%- for mensagem in get_flashed_messages () %}
+    {{mensagem}}
+    {%- endfor %}
+
     {% block conteudo %}
-    {% endblock %}
+    {% endblock conteudo %}
 </main>
+</div>
 
 </body>
 </html>

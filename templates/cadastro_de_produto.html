@@ -2,45 +2,48 @@
 
 {% block conteudo %}
 <!--Chama a função-->
+<div class="alinhamento">
+<div class="alinhamento">
+    <form class="form_control" action="{{url_for('criar_produto')}}" method="POST">
+        <div class="prod">
+            <label>Nome: </label>
+            <input type="text" name="form_nome">
+        </div>
+        <div class="prod">
+            <label>Marca: </label>
+            <input type="text" name="form_marca">
+        </div>
 
-<form class="form_control" action="{{url_for('criar_produto')}}" method="POST">
-    <div class="prod">
-        <label>Nome: </label>
-        <input type="text" name="form_nome">
-    </div>
-    <div class="prod">
-        <label>Marca: </label>
-        <input type="text" name="form_marca">
-    </div>
+        <div class="prod">
+            <label>Descrição: </label>
+            <input type="text" name="form_descricao">
+        </div>
 
-    <div class="prod">
-        <label>Descrição: </label>
-        <input type="text" name="form_descricao">
-    </div>
+        <div class="prod">
+            <label>Valor: </label>
+            <input type="number" name="form_valor">
+        </div>
 
-    <div class="prod">
-        <label>Valor: </label>
-        <input type="number" name="form_valor">
-    </div>
+        <div class="prod">
+            <label>Código: </label>
+            <input type="number" name="form_codigo">
+        </div>
 
-    <div class="prod">
-        <label>Código: </label>
-        <input type="number" name="form_codigo">
-    </div>
-
-    <div class="prod">
-        <label>Categoria: </label>
-        <select class="form_control" name="form_categoria_id">
-            <option value="{{nome}}" disabled selected hidden>Selecione uma opção</option>
-            {% for item in var_categoria %}
+        <div class="prod">
+            <label>Categoria: </label>
+            <select class="form_control" name="form_categoria_id">
+                <option value="{{nome}}" disabled selected hidden>Selecione uma opção</option>
+                {% for item in var_categoria %}
                 <option value="{{item.id}}">{{item.nome}}</option>
-            {% endfor %}
+                {% endfor %}
 
-        </select>
-    </div>
+            </select>
+        </div>
 
-    <button>Salvar</button>
-    <button><a href="{{url_for('produtos')}}"></a>Cancelar</button>
+        <button>Salvar</button>
+        <button><a href="{{url_for('produtos')}}"></a>Cancelar</button>
 
-</form>
+    </form>
+</div>
+</div>
 {% endblock conteudo %}

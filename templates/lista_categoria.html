@@ -2,11 +2,30 @@
 
 {% block conteudo %}
 
-    {% for item in categorias_banco%}
-        <div class="categoria">
-            Nome:{{item.nome}}
-        </div>
 
-    {% endfor %}
+
+<table  class="categoria_tab">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for item in categorias_banco %}
+        <tr>
+            <td>{{item.nome}}</td>
+            <td class="editar"><a href="{{ url_for('editar_categoria',id=item.id) }}">Editar Categoria</a></td>
+        </tr>
+            {% endfor %}
+    </tbody>
+</table>
 
 {% endblock conteudo %}
+
+
+
+
+
+

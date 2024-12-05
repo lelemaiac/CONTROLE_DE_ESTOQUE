@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="botoes">
+<a href="{{ url_for('produtos') }}"> <div class="botao">
+                 Tabela de Produtos</div> </a>
+
+<a href="{{ url_for('funcionarios') }}"> <div class="botao">
+       Tabela de Funcionários</div> </a>
+
+<a href="{{ url_for('movimentacoes') }}"> <div class="botao">
+       Tabela de Movimentações</div> </a>
+
+<a href="{{ url_for('categorias') }}"> <div class="botao">
+       Tabela de Categorias</div> </a>
+
+</div>
+
+{% endblock conteudo %}
+

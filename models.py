@@ -5,7 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 #'sqlite:///nome.sqlite3' = nome do meu banco de dados
 #configurar banco de dados
 #criando conexão
-engine = create_engine('sqlite:///controle.sqlite3')
+engine = create_engine('sqlite:///controle_estoque.sqlite3')
 db_sesion = scoped_session(sessionmaker(bind=engine))
 
 #ela permite que você defina classes Python que representam tabelas de banco de dados
@@ -31,6 +31,7 @@ class Funcionario(Base):
 
     def __repr__(self):
         return '<Funcionario: Nome: {} CPF: {}>'.format(self.nome, self.cpf)
+
     def save(self):
         db_sesion.add(self)
         db_sesion.commit()
@@ -84,6 +85,7 @@ class Produto(Base):
     nome = Column(String(40), nullable=False, index=True)
     marca = Column(String(40), nullable=False, index=True)
     descricao = Column(String(40), nullable=False, index=True)
+    quantidade = Column(Integer)
     valor = Column(Float, nullable=False, index=True)
     codigo = Column(Integer, nullable=False, index=True, unique=True)
     categoria_id = Column(Integer, ForeignKey('categorias.id'))
@@ -119,7 +121,7 @@ class Movimentacao(Base):
     __tablename__ = 'movimentacao'
     id = Column(Integer, primary_key=True)
     quantidade = Column(Integer, nullable=False, index=True)
-    data = Column(String(10), nullable=False, index=True)
+    data = Column(String(10), nullable=False, index=True, autoincrement=True)
     status = Column(String(10), nullable=False)
 
     produto_id = Column(Integer, ForeignKey('produtos.id'))

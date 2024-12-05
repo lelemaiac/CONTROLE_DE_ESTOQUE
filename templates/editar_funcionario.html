@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<!--Chama a função-->
+
+<form class="form_control" action="{{ url_for('editar_funcionario', id=var_funcionario.id) }}" method="post">
+    <div class="fun">
+        <label>Nome: </label>
+        <input type="text" name="form_nome" value="{{var_funcionario.nome}}">
+    </div>
+    <div class="fun">
+        <label>Telefone: </label>
+        <input type="text" name="form_telefone" value="{{var_funcionario.telefone}}">
+    </div>
+
+    <div class="fun">
+        <label>Ano de nascimento: </label>
+        <input type="number" name="form_anoNasci" value="{{var_funcionario.ano_de_nascimento}}">
+    </div>
+
+    <div class="fun">
+        <label>Endereço: </label>
+        <input type="text" name="form_endereco" value="{{var_funcionario.endereco}}">
+    </div>
+
+    <div class="fun">
+        <label>CPF: </label>
+        <input type="text" name="form_cpf" value="{{var_funcionario.cpf}}">
+    </div>
+
+    <div class="fun">
+        <label>Email: </label>
+        <input type="text" name="form_email" value="{{var_funcionario.email}}">
+    </div>
+
+
+    <button>Salvar</button>
+    <button><a href="{{url_for('funcionarios')}}"></a>Cancelar</button>
+
+</form>
+
+{% endblock conteudo %}

@@ -2,15 +2,34 @@
 
 {% block conteudo %}
 
-    {% for item in movimentacao_banco%}
-        <div class="movimentacao">
-            Quantidade:{{item.quantidade}}
-            Data:{{item.data}}
-            Status:{{item.status}}
-            Id do produto: {{item.produto_id}}
-            Id do funcionário: {{item.funcionario_id}}
-        </div>
 
-    {% endfor %}
+
+
+<table  class="movimentacao_tab">
+    <thead>
+        <tr>
+            <th>Quantidade</th>
+            <th>Data</th>
+            <th>Status</th>
+            <th>Id do Produto</th>
+            <th>Id do Funcionário</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for item in movimentacao_banco%}
+        <tr>
+            <td>{{item.quantidade}}</td>
+            <td>{{item.data}}</td>
+            <td>{{item.status}}</td>
+            <td>{{item.produto_id}}</td>
+            <td>{{item.funcionario_id}}</td>
+            <td class="editar"><a href="{{ url_for('editar_movimentacao',id=item.id) }}">Editar Movimentação</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
 
 {% endblock conteudo %}
