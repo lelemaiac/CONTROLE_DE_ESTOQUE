@@ -9,7 +9,6 @@ import pandas as pd
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'SENHA'
 
-
 @app.route("/")
 def index():
     return render_template("base.html")
