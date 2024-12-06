@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<div class="grafico">
+    {{ grafico_func | safe }}
+</div>
+
+<div class="grafico">
+    {{ grafico_prod | safe }}
+</div>
+
+
+{% endblock conteudo %}

@@ -2,7 +2,7 @@
 
 {% block conteudo %}
 <!--Chama a função-->
-<div class="alinhamento">
+
 <div class="alinhamento">
     <form class="form_control" action="{{url_for('criar_produto')}}" method="POST">
         <div class="prod">
@@ -31,7 +31,7 @@
 
         <div class="prod">
             <label>Categoria: </label>
-            <select class="form_control" name="form_categoria_id">
+            <select name="form_categoria_id">
                 <option value="{{nome}}" disabled selected hidden>Selecione uma opção</option>
                 {% for item in var_categoria %}
                 <option value="{{item.id}}">{{item.nome}}</option>
@@ -41,9 +41,9 @@
         </div>
 
         <button>Salvar</button>
-        <button><a href="{{url_for('produtos')}}"></a>Cancelar</button>
+        <button><a href="{{url_for('produtos')}}">Cancelar</a></button>
 
     </form>
 </div>
-</div>
+
 {% endblock conteudo %}

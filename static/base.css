@@ -56,14 +56,15 @@ a:hover{
     display: block;
     background-color: #3c4973;
     height: 100px;
+    width: 100%;
     color: white;
 
 }
 
 nav {
     display: inline-block;
-    height: 200%;
-    width: 11%;
+    height: calc(100% - 100px);
+    width: 165px;
     background-color: #323071;
     float: left;
     text-align: center;
@@ -74,19 +75,21 @@ nav {
 main {
     display: inline-block;
     background-color: #282c40;
-     /*largura da tela*/
-    width: 89%;
+    /*largura da tela*/
+    width: calc(100% - 165px);
     /* altura*/
-    height: 100%;
+    height: calc(100% - 100px);
     vertical-align: top;
     float: left;
+    align-content: center;
+    align-items: center;
 }
 
 .botao {
     font-size: 10px;
     background-color: #a8aaee;
     /*inline-block da pra mudar o tamanho*/
-    height: 60px;
+    height: 80px;
     width: 120px;
     border-radius: 10px;
     margin: 10px;
@@ -94,9 +97,8 @@ main {
     font-size: 20px;
     /*para organizar deixar alinhado*/
     float: left;
-    text-align: center;
-    align-content: center;
-    align-items: center;
+
+
 }
 
 .botao:hover{
@@ -118,18 +120,17 @@ form {
     display: grid;
     gap: 20px;
     width: 50%;
-    margin: 0 auto;
-
+    margin: 10px auto;
 }
 
-form input, form select, form textarea {
+form input, select, form textarea {
     background-color: #7168C5;
     border: none;
     border-radius: 8px;
     padding: 10px;
     font-size: 1rem;
     color: #f6f3f3;
-    width: 650px;
+    width: 90%;
 
 }
 
@@ -143,11 +144,9 @@ form button {
     background-color: #9B92E4;
     border: none;
     border-radius: 10px;
-    padding: 10px 20px;
-    color: #faf9f9;
-    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
+    height: 45px;
     transition: background 0.3s ease;
 }
 
@@ -218,14 +217,16 @@ td:hover {
 .imagem_caixa{
     float: right;
     margin-left: 200px;
-    height: 250px;
-    width: 300px;
+    height: 200px;
+    width: 250px;
     align-items: baseline;
 }
 
 .alinhamento{
     height: 100%;
     width: 100%;
+    overflow: auto;
+    float: left;
     background-size: cover;
     align-content: center;
     background-image: url("/static/image_cadastro.png");
@@ -239,8 +240,8 @@ td:hover {
     color: white;
     border-radius: 20px;
     float: left;
-    margin-top: 250px;
-    margin-left: 20px;
+    margin-top: 180px;
+    margin-left: 10px;
 
 }
 
@@ -254,16 +255,61 @@ td:hover {
 
 .funcionario_tab{
      margin-left: 50px;
+     margin-top: 20px;
 }
 
 .movimentacao_tab{
      margin-left: 250px;
+     margin-top: 20px;
+
 }
 
 .produtos_tab{
      margin-left: 250px;
+     margin-top: 20px;
 }
 
 .categoria_tab{
-     margin-left: 500px;
+    margin-left: 500px;
+    margin-top: 20px;
 }
+
+.grafico{
+    float: left;
+    width: 47%;
+    height: 70%;
+    margin: 15px;
+
+}
+
+.continuar{
+    position: absolute;
+    width: 8%;
+    background-color: #8689ef;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    height: auto;
+    top: 16vh;
+    right: 5vw;
+
+}
+
+.continuar:hover{
+    background-color: #3B3A75;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

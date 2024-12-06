@@ -3,8 +3,8 @@
 {% block conteudo %}
 
 
-
-<table  class="categoria_tab">
+<div class="categoria_tab">
+    <table>
     <thead>
         <tr>
             <th>Nome</th>
@@ -21,6 +21,9 @@
             {% endfor %}
     </tbody>
 </table>
+</div>
+
+<button class="continuar"><a id="continue" href="{{url_for('criar_categoria')}}">Cadastrar</a></button>
 
 {% endblock conteudo %}
 
